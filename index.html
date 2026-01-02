@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EACL 2026 MLLM Tutorial</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .thumbnail { 
+            max-width: 100%; 
+            max-height: 100%; 
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .thumbnail-wrapper {
+            width: 150px; 
+            height: 150px; 
+            display: block; 
+            margin: auto; 
+            padding-bottom: 10px;
+        }
+        i { margin-right: 10px; }
+        .organizer-card {
+            height: 100%;
+        }
+        /* Custom formatting for the outline lists to match PDF hierarchy */
+        .tutorial-outline ul {
+            list-style-type: disc;
+            margin-bottom: 1rem;
+        }
+        .tutorial-outline ul ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .section-header {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .section-duration {
+            font-weight: normal;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <!-- Header Section -->
+        <div class="bg-light p-5 rounded mt-3">
+            <h1 class="text-center">Multimodal Large Language Models for Human-AI Interaction</h1>
+            <h3 class="text-center text-muted">Foundations, Agents, and Inclusive Applications</h3>
+            <h4 class="text-center mt-3">Half-day tutorial at <a href="#">EACL 2026</a>.</h4>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="bg-light p-5 rounded mt-3">
+            <h2 class="text-center">Overview</h2>
+            <p class="lead">
+                Multimodal large language models (MLLMs) are redefining how humans communicate and collaborate with machines. 
+                They extend the capabilities of text-based LLMs to perceive, reason, and act across text, images, charts, forms, and graphical user interfaces (GUIs). 
+                These models are now capable of answering questions about charts, summarizing infographics, operating software through natural language, and supporting multilingual and accessible visualization.
+            </p>
+            <p>
+                This tutorial offers a concise, three-hour introduction to the foundations, agentic capabilities, and inclusive applications of MLLMs, with a focus on visually grounded and interactive language tasks. 
+                We will cover core architectural designs (encoders, connectors, fusion and decoding mechanisms), multimodal alignment and learning strategies, and reasoning techniques for structured visuals such as charts, forms, and infographics. 
+                The tutorial then examines multimodal and conversational agents that perform dialogue-driven reasoning and co-creative analysis in graphical user interfaces. 
+                We conclude with discussions on accessibility, multilingual communication, responsible deployment, and future challenges in building human-centered multimodal AI.
+            </p>
+        </div>
+
+        <!-- Materials / Schedule Section -->
+        <div class="bg-light p-5 rounded mt-3">
+            <h2 class="text-center">Schedule & Materials</h2>
+            <div class="container tutorial-outline">
+                <div class="row">
+                    
+                    <!-- Part 1 -->
+                    <div class="section-header">
+                        Part I: Foundations of Multimodal Large Language Models <span class="section-duration">[45 mins]</span>
+                    </div>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>From Text to Multimodality:</strong> evolution of LLMs from text-only to multimodal reasoning.</li>
+                        <li><strong>Architectural Principles:</strong>
+                            <ul>
+                                <li>Vision encoders (ViT, Swin, CLIP, SigLIP) and language decoders (Llama, Qwen).</li>
+                                <li>Connector modules for cross-modal fusion (linear projections, adapters, gated tokens).</li>
+                                <li>Unified multimodal architectures: Flamingo, Kosmos, LLaVa, Pali, QwenVL.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Alignment and Reinforcement Learning:</strong>
+                            <ul>
+                                <li>Instruction tuning and multimodal alignment.</li>
+                                <li>Reinforcement learning for grounding and reward optimization: RLHF, GRPO, and visual reward shaping.</li>
+                                <li>Case studies: ChartGemma (visual instruction tuning), BigCharts-R1 (RL for charts).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Part 2 -->
+                    <div class="section-header">
+                        Part II: Reasoning Across Visual and Structured Modalities <span class="section-duration">[45 mins]</span>
+                    </div>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Datasets and Benchmarks:</strong>
+                            <ul>
+                                <li>Visualization datasets (FigureQA, CharXiv, ChartQA, ChartQAPro, DashboardQA).</li>
+                                <li>Generative and bidirectional corpora (Chart-to-Text, Text2Vis, DataNarrative, and InfographicVQA).</li>
+                                <li>Document and GUI datasets: DocVQA, FormNet, ScreenAI).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Reasoning Techniques:</strong> multimodal chain-of-thought, ReAct prompting, and structured decoding for spatial/tabular data.</li>
+                        <li><strong>Vision-Language Alignment:</strong> Challenges of mapping visual features to linguistic embedding spaces; Case study: AlignVLM.</li>
+                    </ul>
+
+                    <!-- Part 3 -->
+                    <div class="section-header">
+                        Part III: Human-AI Interaction and Multimodal Agents <span class="section-duration">[45 mins]</span>
+                    </div>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Emergence of Multimodal Agents:</strong> From passive perception to active reasoning, tool use, and environment manipulation (WebArena, Mind2Web, OSWorld, AndroidWorld, UI-Tars, OpenCua).</li>
+                        <li><strong>GUI Grounding & Interactive Data Analysis:</strong> natural-language control of UIs and visualizations; case study: DashboardQA.</li>
+                        <li><strong>Co-Creation and Collaboration:</strong> agentic frameworks for visualizations and interactive data analysis; Case study: DataNarrative.</li>
+                    </ul>
+
+                    <!-- Coffee Break -->
+                    <h4 style="font-size: 1.1em; color: #555; margin-top: 20px; margin-bottom: 10px; border-top: 1px dashed #ccc; border-bottom: 1px dashed #ccc; padding: 10px 0;">
+                        <i class="fas fa-coffee"></i> Coffee Break
+                    </h4>
+
+                    <!-- Part 4 -->
+                    <div class="section-header">
+                        Part IV: Inclusive & Responsible MLLMs <span class="section-duration">[20 mins]</span>
+                    </div>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Accessibility:</strong> alt-text, captions, sonification, and assistive systems (SeeChart, VizAbility).</li>
+                        <li><strong>Multilingual Narration:</strong> cross-cultural and low-resource multimodal content understanding.</li>
+                        <li><strong>Responsible AI Practices:</strong> fairness, bias, hallucination, and visual deception.</li>
+                    </ul>
+
+                    <!-- Part 5 -->
+                    <div class="section-header">
+                        Part V: Future Challenges & Outlook <span class="section-duration">[30 mins]</span>
+                    </div>
+                    <ul style="margin-left: 20px;">
+                        <li>Toward unified agentic frameworks combining perception, reasoning, and interaction.</li>
+                        <li>Expanding evaluation standards for factuality, explainability, accessibility and inclusivity.</li>
+                        <li>Human-in-the-loop and reinforcement-based grounding for reliable multimodal reasoning.</li>
+                    </ul>
+
+                    <h3 class="mt-5">Slides</h3>
+                    <p class="text-muted"><em>Slides will be made available here.</em></p>
+                    <p><a href="#" class="btn btn-outline-primary btn-sm disabled">Part 1: Foundations</a></p>
+                    <p><a href="#" class="btn btn-outline-primary btn-sm disabled">Part 2: Reasoning</a></p>
+                    <p><a href="#" class="btn btn-outline-primary btn-sm disabled">Part 3: Agents & Applications</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Organizers Section -->
+        <div class="bg-light p-5 rounded mt-3">
+            <h2 class="text-center mb-5">Organizers</h2>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                    
+                    <!-- Organizer 1 -->
+                    <div class="col">
+                        <div class="text-center organizer-card">
+                            <div class="thumbnail-wrapper">
+                                <!-- Placeholder image used; replace with real URL if available -->
+                                <img src="https://ui-avatars.com/api/?name=Shafiq+Joty&background=random" alt="Shafiq Joty" class="img-thumbnail thumbnail">
+                            </div>
+                            <h5><a href="mailto:sjoty@salesforce.com" class="text-decoration-none text-dark">Shafiq Joty</a></h5>
+                            <p class="text-muted small">Salesforce Research & NTU Singapore</p>
+                            <a href="mailto:sjoty@salesforce.com"><i class="bi bi-envelope fs-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Organizer 2 -->
+                    <div class="col">
+                        <div class="text-center organizer-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="https://www.yorku.ca/enamulh/images/me2023.png" alt="Enamul Hoque" class="img-thumbnail thumbnail">
+                            </div>
+                            <h5><a href="https://www.yorku.ca/enamulh/" class="text-decoration-none text-dark">Enamul Hoque</a></h5>
+                            <p class="text-muted small">York University</p>
+                            <a href="mailto:enamulh@yorku.ca"><i class="bi bi-envelope fs-4"></i></a>
+                            <a href="https://twitter.com/Enamul_Hoque"><i class="bi bi-twitter fs-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Organizer 3 -->
+                    <div class="col">
+                        <div class="text-center organizer-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="https://github.com/AhmedMasryKU/AhmedMasryKU.github.io/blob/master/images/peronal_photo.jpg" alt="Ahmed Masry" class="img-thumbnail thumbnail">
+                            </div>
+                            <h5><a href="mailto:masry20@yorku.ca" class="text-decoration-none text-dark">Ahmed Masry</a></h5>
+                            <p class="text-muted small">York University & Mila</p>
+                            <a href="mailto:masry20@yorku.ca"><i class="bi bi-envelope fs-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Organizer 4 -->
+                    <div class="col">
+                        <div class="text-center organizer-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="https://ui-avatars.com/api/?name=Spandana+Gella&background=random" alt="Spandana Gella" class="img-thumbnail thumbnail">
+                            </div>
+                            <h5><a href="mailto:spandana.gella@servicenow.com" class="text-decoration-none text-dark">Spandana Gella</a></h5>
+                            <p class="text-muted small">ServiceNow Research</p>
+                            <a href="mailto:spandana.gella@servicenow.com"><i class="bi bi-envelope fs-4"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Organizer 5 -->
+                    <div class="col">
+                        <div class="text-center organizer-card">
+                            <div class="thumbnail-wrapper">
+                                <img src="https://ui-avatars.com/api/?name=Samira+Kahou&background=random" alt="Samira Ebrahimi Kahou" class="img-thumbnail thumbnail">
+                            </div>
+                            <h5><a href="mailto:samira.ebrahimikahou@ucalgary.ca" class="text-decoration-none text-dark">Samira Ebrahimi Kahou</a></h5>
+                            <p class="text-muted small">University of Calgary & Mila</p>
+                            <a href="mailto:samira.ebrahimikahou@ucalgary.ca"><i class="bi bi-envelope fs-4"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
